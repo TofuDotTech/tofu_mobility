@@ -6,10 +6,34 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
+    let manager = CLLocationManager()
+    
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor(named: "CoolGray")
+    }
+    
     var body: some View {
-        MapTestView()
+        TabView {
+            /* MapTestView(
+                latitude: manager.location?.coordinate.latitude.magnitude ?? 0.0,
+                longitude: manager.location?.coordinate.longitude.magnitude ?? 0.0
+                )
+                .tabItem {
+                    Label("Mapa", systemImage: "map.fill")
+                } */
+            MainView()
+                .tabItem {
+                    Label("Mapa", systemImage: "map.fill")
+                }
+            
+            RouteView()
+                .tabItem {
+                    Label("Rutas", systemImage: "bus.fill")
+                }
+        }
     }
 }
 

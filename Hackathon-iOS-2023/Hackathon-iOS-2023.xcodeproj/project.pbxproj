@@ -13,6 +13,8 @@
 		2C416CC129FD89A3008BE2A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C416CC029FD89A3008BE2A4 /* Preview Assets.xcassets */; };
 		2C416CC829FDAD11008BE2A4 /* MapTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C416CC729FDAD11008BE2A4 /* MapTestView.swift */; };
 		2C416CCA29FDB40F008BE2A4 /* TextToSpeechTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C416CC929FDB40F008BE2A4 /* TextToSpeechTestView.swift */; };
+		2C8A82E429FDD43600C33815 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82E329FDD43600C33815 /* RouteView.swift */; };
+		2C8A82E629FDDB2800C33815 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82E529FDDB2800C33815 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		2C416CC029FD89A3008BE2A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C416CC729FDAD11008BE2A4 /* MapTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTestView.swift; sourceTree = "<group>"; };
 		2C416CC929FDB40F008BE2A4 /* TextToSpeechTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechTestView.swift; sourceTree = "<group>"; };
+		2C8A82E329FDD43600C33815 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
+		2C8A82E529FDDB2800C33815 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				2C416CBB29FD89A2008BE2A4 /* ContentView.swift */,
 				2C416CBD29FD89A3008BE2A4 /* Assets.xcassets */,
 				2C416CBF29FD89A3008BE2A4 /* Preview Content */,
+				2C8A82E329FDD43600C33815 /* RouteView.swift */,
+				2C8A82E529FDDB2800C33815 /* MainView.swift */,
 			);
 			path = "Hackathon-iOS-2023";
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C416CCA29FDB40F008BE2A4 /* TextToSpeechTestView.swift in Sources */,
+				2C8A82E629FDDB2800C33815 /* MainView.swift in Sources */,
+				2C8A82E429FDD43600C33815 /* RouteView.swift in Sources */,
 				2C416CBC29FD89A2008BE2A4 /* ContentView.swift in Sources */,
 				2C416CBA29FD89A2008BE2A4 /* Hackathon_iOS_2023App.swift in Sources */,
 				2C416CC829FDAD11008BE2A4 /* MapTestView.swift in Sources */,
@@ -277,8 +285,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Hackathon-iOS-2023/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Dame tus datos puerca";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Dame tus datos puerca";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Necesitamos su localización para el funcionamiento de la aplicación";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesitamos su localización para el funcionamiento de la aplicación";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -306,8 +314,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Hackathon-iOS-2023/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Dame tus datos puerca";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Dame tus datos puerca";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Necesitamos su localización para el funcionamiento de la aplicación";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesitamos su localización para el funcionamiento de la aplicación";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -12,6 +12,7 @@ struct Hackathon_iOS_2023App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.dark)
         }
     }
 }
