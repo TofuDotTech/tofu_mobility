@@ -11,6 +11,8 @@
 		2C416CBC29FD89A2008BE2A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C416CBB29FD89A2008BE2A4 /* ContentView.swift */; };
 		2C416CBE29FD89A3008BE2A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C416CBD29FD89A3008BE2A4 /* Assets.xcassets */; };
 		2C416CC129FD89A3008BE2A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C416CC029FD89A3008BE2A4 /* Preview Assets.xcassets */; };
+		2C416CC829FDAD11008BE2A4 /* MapTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C416CC729FDAD11008BE2A4 /* MapTestView.swift */; };
+		2C416CCA29FDB40F008BE2A4 /* TextToSpeechTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C416CC929FDB40F008BE2A4 /* TextToSpeechTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		2C416CBB29FD89A2008BE2A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C416CBD29FD89A3008BE2A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C416CC029FD89A3008BE2A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2C416CC729FDAD11008BE2A4 /* MapTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTestView.swift; sourceTree = "<group>"; };
+		2C416CC929FDB40F008BE2A4 /* TextToSpeechTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 		2C416CAD29FD89A2008BE2A4 = {
 			isa = PBXGroup;
 			children = (
+				2C416CC929FDB40F008BE2A4 /* TextToSpeechTestView.swift */,
 				2C416CB829FD89A2008BE2A4 /* Hackathon-iOS-2023 */,
 				2C416CB729FD89A2008BE2A4 /* Products */,
 			);
@@ -52,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				2C416CB929FD89A2008BE2A4 /* Hackathon_iOS_2023App.swift */,
+				2C416CC729FDAD11008BE2A4 /* MapTestView.swift */,
 				2C416CBB29FD89A2008BE2A4 /* ContentView.swift */,
 				2C416CBD29FD89A3008BE2A4 /* Assets.xcassets */,
 				2C416CBF29FD89A3008BE2A4 /* Preview Content */,
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C416CCA29FDB40F008BE2A4 /* TextToSpeechTestView.swift in Sources */,
 				2C416CBC29FD89A2008BE2A4 /* ContentView.swift in Sources */,
 				2C416CBA29FD89A2008BE2A4 /* Hackathon_iOS_2023App.swift in Sources */,
+				2C416CC829FDAD11008BE2A4 /* MapTestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,11 +277,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Hackathon-iOS-2023/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Dame tus datos puerca";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Dame tus datos puerca";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,11 +306,12 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Hackathon-iOS-2023/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Dame tus datos puerca";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Dame tus datos puerca";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
