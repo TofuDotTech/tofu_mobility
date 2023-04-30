@@ -46,7 +46,11 @@ struct BottomDrawer: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text("¿Qué quieres reportar").font(.body)
+            HStack {
+                Spacer()
+                Text("¿Qué quieres reportar?").font(.body)
+                Spacer()
+            }
             ForEach(selectables) { selectable in
                 Button(action: { selected = selectable.value }) {
                     HStack {
@@ -61,10 +65,11 @@ struct BottomDrawer: View {
                 }
             }
             RedButton("Reportar viaje") { onReportClick() }
+                .disabled(selected.isEmpty)
         }
-        .padding()
-        .background(Color("CoolGray"))
-        .cornerRadius(20)
+        // .padding()
+        // .background(Color("CoolGray"))
+        // .cornerRadius(20)
     }
 }
 
@@ -90,16 +95,15 @@ struct TripDetailsView: View {
                 }
             }
             .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
-            if showDrawer {
-                BottomDrawer {
-                    withAnimation {
-                        showDrawer = false
-                    }
-                }
-                .padding(.bottom, 8)
-            }
         }
         .navigationTitle("Detalles del viaje")
+        .sheet(isPresented: $showDrawer) {
+            BottomDrawer{ showDrawer.toggle() }
+                .padding()
+                .padding(.top, 12)
+                .presentationDetents([.height(220)])
+                .presentationDragIndicator(.visible)
+        }
     }
 }
 

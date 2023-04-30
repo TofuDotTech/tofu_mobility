@@ -7,6 +7,33 @@
 
 import SwiftUI
 
+struct IdentifiableStep: Identifiable {
+    var id: UUID = UUID()
+    var destination: String
+}
+
+struct RouteDetailView: View {
+    var stepsArray = [
+        IdentifiableStep(destination: "Primer paso"),
+        IdentifiableStep(destination: "Segundo paso"),
+        IdentifiableStep(destination: "Tercer paso"),
+    ]
+    
+    var ruta: String
+    
+    init(_ ruta: String) {
+        self.ruta = ruta
+    }
+    
+    var body: some View {
+        List(stepsArray) { step in
+            Text(step.destination)
+        }
+        .navigationTitle(ruta)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
 struct RouteView: View {
     var routeArray = [
         IdentifiableRoute(name: "Ruta 1", from: "Mixcoac", to: "Universidad"),
@@ -17,7 +44,7 @@ struct RouteView: View {
     var body: some View {
         NavigationView {
             List(routeArray) { route in
-                NavigationLink(destination: { Text("h1") }) {
+                NavigationLink(destination: { RouteDetailView(route.name) }) {
                     HStack {
                         Text(route.name)
                         Text("\(route.from) - \(route.to)")
