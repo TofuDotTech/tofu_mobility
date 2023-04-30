@@ -24,6 +24,7 @@
 		2C8A82FB29FE59CD00C33815 /* PrincipalConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82FA29FE59CD00C33815 /* PrincipalConductor.swift */; };
 		2C8A82FD29FE59F500C33815 /* ProximaParada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82FC29FE59F500C33815 /* ProximaParada.swift */; };
 		2C8A82FF29FEB6D400C33815 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82FE29FEB6D400C33815 /* LoginView.swift */; };
+		2C8A830329FEF4D900C33815 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A830229FEF4D900C33815 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		2C8A82FA29FE59CD00C33815 /* PrincipalConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalConductor.swift; sourceTree = "<group>"; };
 		2C8A82FC29FE59F500C33815 /* ProximaParada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximaParada.swift; sourceTree = "<group>"; };
 		2C8A82FE29FEB6D400C33815 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2C8A830229FEF4D900C33815 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		2C416CAD29FD89A2008BE2A4 = {
 			isa = PBXGroup;
 			children = (
+				2C8A830229FEF4D900C33815 /* Network.swift */,
 				2C416CC929FDB40F008BE2A4 /* TextToSpeechTestView.swift */,
 				2C416CB829FD89A2008BE2A4 /* Hackathon-iOS-2023 */,
 				2C416CB729FD89A2008BE2A4 /* Products */,
@@ -218,6 +221,7 @@
 			files = (
 				2C8A82EB29FE00A000C33815 /* TripDetailsView.swift in Sources */,
 				2C8A82E929FDF52500C33815 /* TripsView.swift in Sources */,
+				2C8A830329FEF4D900C33815 /* Network.swift in Sources */,
 				2C416CCA29FDB40F008BE2A4 /* TextToSpeechTestView.swift in Sources */,
 				2C8A82FF29FEB6D400C33815 /* LoginView.swift in Sources */,
 				2C8A82F329FE3A1500C33815 /* Route.swift in Sources */,

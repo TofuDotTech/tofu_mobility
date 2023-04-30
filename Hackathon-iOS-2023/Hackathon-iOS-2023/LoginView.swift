@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var network: Network
+    
     var body: some View {
         NavigationView {
             VStack {
                 Text("Elige el plan al que perteneces:")
                     .font(.title)
-                NavigationLink(destination: Passenger()) {
+                NavigationLink(
+                    destination: Passenger()
+                        .onAppear{network.getInCurrentRoute()}
+                        .environmentObject(network)
+                ) {
                     Text("Pasajero")
                 }
                 .buttonStyle(.borderedProminent)
