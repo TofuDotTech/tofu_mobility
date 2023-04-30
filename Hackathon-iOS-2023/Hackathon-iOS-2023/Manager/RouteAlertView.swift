@@ -1,5 +1,5 @@
 //
-//  RouteView.swift
+//  RouteAlertView.swift
 //  Hackathon-iOS-2023
 //
 //  Created by Iván Vega on 29/04/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RouteView: View {
+struct RouteAlertView: View {
     var routeArray = [
         IdentifiableRoute(name: "Ruta 1", from: "Mixcoac", to: "Universidad"),
         IdentifiableRoute(name: "Ruta 2", from: "Mixcoac", to: "Universidad"),
@@ -30,8 +30,8 @@ struct RouteView: View {
     }
 }
 
-struct RouteView_Previews: PreviewProvider {
+struct RouteAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        RouteView()
+        RouteAlertView()
     }
 }

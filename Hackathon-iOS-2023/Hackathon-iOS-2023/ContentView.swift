@@ -24,7 +24,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Mapa", systemImage: "map.fill")
                 } */
-            MainView()
+            PassengerMainView()
                 .tabItem {
                     Label("Mapa", systemImage: "map.fill")
                 }
