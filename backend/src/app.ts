@@ -2,10 +2,17 @@ import express, { json, urlencoded } from 'express';
 import project_routes from './routes/projectRoute.js';
 import type { Request, Response, NextFunction } from 'express';
 import passport from 'passport';
+import { createServer } from "http";
 import config_passport from './config/passport.js';
+import { configSocketServer } from './config/socket.js';
 
 const app = express();
+const httpServer = createServer(app);
+const io = configSocketServer(httpServer)
+
 config_passport(passport);
+
+const socketMap = new Map();
 
 app.use(function(req, res, next) {
   // Website you wish to allow to connect
@@ -41,4 +48,4 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   res.status(500).send({ success: false, message: err.message });
 });
 
-export default app;
+export { httpServer, io, socketMap };

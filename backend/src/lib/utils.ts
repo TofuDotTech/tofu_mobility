@@ -4,8 +4,6 @@ import { readFileSync } from 'fs';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const client_id = process.env.spotify_client_id;
-const client_secret = process.env.spotify_client_secret;
 const PRIV_KEY = readFileSync(new URL('../../id_rsa_priv.pem', import.meta.url), 'utf8');
 
 export function validPassword(password: string, hash: string, salt: string) {
