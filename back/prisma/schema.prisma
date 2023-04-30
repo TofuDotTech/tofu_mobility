@@ -1,0 +1,141 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model conductores {
+  id           String      @id @default(uuid()) @db.VarChar(36)
+  usuarioId    String      @db.VarChar(36)
+  transporteId String      @db.VarChar(36)
+  usuarios     usuarios    @relation(fields: [usuarioId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  transportes  transportes @relation(fields: [transporteId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([id])
+  @@index([transporteId])
+  @@index([usuarioId])
+}
+
+model direcciones {
+  id                                   String  @id @default(uuid()) @db.VarChar(36)
+  origen                               String  @db.VarChar(36)
+  destino                              String  @db.VarChar(36)
+  paradas_direcciones_origenToparadas  paradas @relation("direcciones_origenToparadas", fields: [origen], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  paradas_direcciones_destinoToparadas paradas @relation("direcciones_destinoToparadas", fields: [destino], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([id])
+  @@index([destino])
+  @@index([origen])
+}
+
+model notificaciones {
+  id                                        String   @id @default(uuid()) @db.VarChar(36)
+  origen                                    String   @db.VarChar(36)
+  destino                                   String   @db.VarChar(36)
+  mensaje                                   String   @db.VarChar(1000)
+  usuarios_notificaciones_origenTousuarios  usuarios @relation("notificaciones_origenTousuarios", fields: [origen], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  usuarios_notificaciones_destinoTousuarios usuarios @relation("notificaciones_destinoTousuarios", fields: [destino], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([destino])
+  @@index([origen])
+  @@index([id])
+}
+
+model paradas {
+  id                                       String                  @id @default(uuid()) @db.VarChar(36)
+  nombre                                   String                  @db.VarChar(100)
+  rutaId                                   String                  @db.VarChar(36)
+  direcciones_direcciones_origenToparadas  direcciones[]           @relation("direcciones_origenToparadas")
+  direcciones_direcciones_destinoToparadas direcciones[]           @relation("direcciones_destinoToparadas")
+  paradasDeshabilitadas                    paradasDeshabilitadas[]
+  transportes                              transportes[]
+  viajes_viajes_paradaInicioToparadas      viajes[]                @relation("viajes_paradaInicioToparadas")
+  viajes_viajes_paradaFinToparadas         viajes[]                @relation("viajes_paradaFinToparadas")
+  ruta                                     rutas                   @relation(fields: [rutaId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([id])
+  @@index([rutaId])
+}
+
+model paradasDeshabilitadas {
+  id           String      @id @default(uuid()) @db.VarChar(36)
+  transporteId String      @db.VarChar(36)
+  paradaId     String      @db.VarChar(36)
+  transportes  transportes @relation(fields: [transporteId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  paradas      paradas     @relation(fields: [paradaId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([paradaId])
+  @@index([transporteId])
+  @@index([id])
+}
+
+model reportes {
+  id           String      @id @default(uuid()) @db.VarChar(36)
+  transporteId String      @db.VarChar(36)
+  usuarioId    String      @db.VarChar(36)
+  mensaje      String      @db.VarChar(1000)
+  transportes  transportes @relation(fields: [transporteId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  usuarios     usuarios    @relation(fields: [usuarioId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([transporteId])
+  @@index([usuarioId])
+  @@index([id])
+}
+
+model rutas {
+  id      String    @id @default(uuid()) @db.VarChar(36)
+  nombre  String    @db.VarChar(100)
+  paradas paradas[]
+
+  @@index([id])
+}
+
+model transportes {
+  id                    String                  @id @default(uuid()) @db.VarChar(36)
+  paradaActual          String?                 @db.VarChar(36)
+  espaciosReservados    Int
+  modelo                String                  @db.VarChar(100)
+  placas                String                  @db.VarChar(10)
+  capacidad             Int
+  conductores           conductores[]
+  paradasDeshabilitadas paradasDeshabilitadas[]
+  reportes              reportes[]
+  paradas               paradas?                @relation(fields: [paradaActual], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  viajes                viajes[]
+
+  @@index([paradaActual])
+  @@index([id])
+}
+
+model usuarios {
+  id                                              String           @id @default(uuid()) @db.VarChar(36)
+  tipo                                            Int
+  tarjeta                                         String?          @unique() @db.VarChar(70)
+  conductores                                     conductores[]
+  notificaciones_notificaciones_origenTousuarios  notificaciones[] @relation("notificaciones_origenTousuarios")
+  notificaciones_notificaciones_destinoTousuarios notificaciones[] @relation("notificaciones_destinoTousuarios")
+  reportes                                        reportes[]
+
+  @@index([id])
+}
+
+model viajes {
+  id                                   String      @id @default(uuid()) @db.VarChar(36)
+  inicio                               DateTime    @db.DateTime(0)
+  fin                                  DateTime?   @db.DateTime(0)
+  transporteId                         String      @db.VarChar(36)
+  paradaInicio                         String      @db.VarChar(36)
+  paradaFin                            String?     @db.VarChar(36)
+  transportes                          transportes @relation(fields: [transporteId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  paradas_viajes_paradaInicioToparadas paradas     @relation("viajes_paradaInicioToparadas", fields: [paradaInicio], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  paradas_viajes_paradaFinToparadas    paradas?    @relation("viajes_paradaFinToparadas", fields: [paradaFin], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([id])
+  @@index([paradaFin])
+  @@index([paradaInicio])
+  @@index([transporteId])
+}
