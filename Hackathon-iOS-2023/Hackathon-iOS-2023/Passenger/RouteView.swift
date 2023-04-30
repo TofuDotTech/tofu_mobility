@@ -12,12 +12,6 @@ struct IdentifiableRoute: Identifiable {
     var name: String
     var from: String
     var to: String
-    
-    init(name: String, from: String, to: String) {
-        self.name = name
-        self.from = from
-        self.to = to
-    }
 }
 
 struct RouteView: View {
@@ -32,12 +26,13 @@ struct RouteView: View {
             List(routeArray) { route in
                 NavigationLink(destination: { Text("h1") }) {
                     HStack {
-                     Text(route.name)
+                        Text(route.name)
                         Text("\(route.from) - \(route.to)")
                     }
                 }
             }
             .navigationTitle("Rutas")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Iván Vega on 29/04/23.
 //
 
-import SwiftUI
+/* import SwiftUI
 import MapKit
 import CoreLocation
 import CoreLocationUI
@@ -59,4 +59,4 @@ struct MapTestView_Previews: PreviewProvider {
     static var previews: some View {
         MapTestView(latitude: 0.0, longitude: 0.0)
     }
-}
+} */

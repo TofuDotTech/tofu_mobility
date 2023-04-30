@@ -15,6 +15,8 @@
 		2C416CCA29FDB40F008BE2A4 /* TextToSpeechTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C416CC929FDB40F008BE2A4 /* TextToSpeechTestView.swift */; };
 		2C8A82E429FDD43600C33815 /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82E329FDD43600C33815 /* RouteView.swift */; };
 		2C8A82E629FDDB2800C33815 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82E529FDDB2800C33815 /* MainView.swift */; };
+		2C8A82E929FDF52500C33815 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82E829FDF52500C33815 /* TripsView.swift */; };
+		2C8A82EB29FE00A000C33815 /* TripDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82EA29FE00A000C33815 /* TripDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		2C416CC929FDB40F008BE2A4 /* TextToSpeechTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechTestView.swift; sourceTree = "<group>"; };
 		2C8A82E329FDD43600C33815 /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		2C8A82E529FDDB2800C33815 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2C8A82E829FDF52500C33815 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
+		2C8A82EA29FE00A000C33815 /* TripDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +64,11 @@
 		2C416CB829FD89A2008BE2A4 /* Hackathon-iOS-2023 */ = {
 			isa = PBXGroup;
 			children = (
+				2C8A82E729FDF26A00C33815 /* Passenger */,
 				2C416CB929FD89A2008BE2A4 /* Hackathon_iOS_2023App.swift */,
-				2C416CC729FDAD11008BE2A4 /* MapTestView.swift */,
 				2C416CBB29FD89A2008BE2A4 /* ContentView.swift */,
 				2C416CBD29FD89A3008BE2A4 /* Assets.xcassets */,
 				2C416CBF29FD89A3008BE2A4 /* Preview Content */,
-				2C8A82E329FDD43600C33815 /* RouteView.swift */,
-				2C8A82E529FDDB2800C33815 /* MainView.swift */,
 			);
 			path = "Hackathon-iOS-2023";
 			sourceTree = "<group>";
@@ -77,6 +79,18 @@
 				2C416CC029FD89A3008BE2A4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2C8A82E729FDF26A00C33815 /* Passenger */ = {
+			isa = PBXGroup;
+			children = (
+				2C416CC729FDAD11008BE2A4 /* MapTestView.swift */,
+				2C8A82E329FDD43600C33815 /* RouteView.swift */,
+				2C8A82E529FDDB2800C33815 /* MainView.swift */,
+				2C8A82E829FDF52500C33815 /* TripsView.swift */,
+				2C8A82EA29FE00A000C33815 /* TripDetailsView.swift */,
+			);
+			path = Passenger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +163,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C8A82EB29FE00A000C33815 /* TripDetailsView.swift in Sources */,
+				2C8A82E929FDF52500C33815 /* TripsView.swift in Sources */,
 				2C416CCA29FDB40F008BE2A4 /* TextToSpeechTestView.swift in Sources */,
 				2C8A82E629FDDB2800C33815 /* MainView.swift in Sources */,
 				2C8A82E429FDD43600C33815 /* RouteView.swift in Sources */,
