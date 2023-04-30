@@ -9,6 +9,10 @@ import SwiftUI
 import MapKit
 
 struct PassengerMainView: View {
+    @EnvironmentObject var network: Network
+    @State var counter: Int = 0
+    @State var timer: Timer? = nil
+    
     let manager = CLLocationManager()
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(
@@ -26,67 +30,89 @@ struct PassengerMainView: View {
     
     init() {
         manager.requestWhenInUseAuthorization()
+        // network.getInCurrentRoute()
     }
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             ZStack(alignment: Alignment.top) {
-                //Map(coordinateRegion: $region, showsUserLocation: true)
-                MapView(directions: $directions)
-                    .ignoresSafeArea()
-                VStack {
+                if network.enViaje == nil {
+                    ProgressView()
+                } else {
+                    //Map(coordinateRegion: $region, showsUserLocation: true)
+                    MapView(directions: $directions)
+                        .ignoresSafeArea()
                     VStack {
-                        HStack {
-                            Spacer()
-                            TextField("Buscar una parada", text: $searchText)
-                                .textFieldStyle(.plain)
-                                .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-                                .background(Color("LightCoolGray"))
-                                .cornerRadius(8)
-                                .frame(width: 300)
-                                .autocorrectionDisabled()
-                            Spacer()
-                            NavigationLink(destination: TripsView()) {
-                                Image(systemName: "person.circle.fill")
-                                    .scaleEffect(2)
+                        VStack {
+                            HStack {
+                                Spacer()
+                                TextField("Buscar una parada", text: $searchText)
+                                    .textFieldStyle(.plain)
+                                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+                                    .background(Color("LightCoolGray"))
+                                    .cornerRadius(8)
+                                    .frame(width: 300)
+                                    .autocorrectionDisabled()
+                                Spacer()
+                                NavigationLink(destination: TripsView()) {
+                                    Image(systemName: "person.circle.fill")
+                                        .scaleEffect(2)
+                                }
+                                Spacer()
                             }
-                            Spacer()
+                            .padding(EdgeInsets(top:50, leading: 12, bottom: 0, trailing: 12))
                         }
-                        .padding(EdgeInsets(top:50, leading: 12, bottom: 0, trailing: 12))
-                    }
-                    .padding(.bottom)
-                    .background(Color("CoolGray"))
-                    .cornerRadius(20)
-                    Button(action: {
-                        isPresented.toggle()
-                        busDrawer.toggle()
-                    }) {
-                        Text("Ejemplo")
+                        .padding(.bottom)
+                        .background(Color("CoolGray"))
+                        .cornerRadius(20)
+                        Button(action: {
+                            isPresented.toggle()
+                            // busDrawer.toggle()
+                            if network.enViaje == true {
+                                timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ tempTimer in
+                                        self.counter = self.counter + 1
+                                }
+                            }
+                            network.getStop()
+                        }) {
+                            Text("Ejemplo")
+                        }
+                        .buttonStyle(.borderedProminent)
+                        Button(action: {network.putCurrentRoute()}) {
+                            Text("Iniciar viaje")
+                        }
+                        .buttonStyle(.borderedProminent)
                     }
                 }
             }
             .edgesIgnoringSafeArea(.top)
             .sheet(isPresented: $isPresented) {
                 Group {
-                    if busDrawer {
-                        BottomDrawerBus()
+                    if network.parada == nil {
+                        ProgressView()
+                    }
+                    else if network.enViaje == true {
+                        BottomDrawerTrip(counter: $counter){ network.putCurrentRoute() }
                             .padding(EdgeInsets(top: 20, leading: 12, bottom: 0, trailing: 12))
                     } else {
-                        BottomDrawerTrip()
+                        BottomDrawerBus()
                             .padding(EdgeInsets(top: 20, leading: 12, bottom: 0, trailing: 12))
+                            .environmentObject(network)
                     }
                 }
                 .presentationDetents([.height(220)])
                 .presentationDragIndicator(.visible)
             }
         }
-    }
+    //}
 }
 
 struct BottomDrawerBus: View {
+    @EnvironmentObject var network: Network
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Parada Donatello #34")
+            Text(network.parada?.parada.nombre ?? "")
                 .font(.title2)
                 .fontWeight(.semibold)
             HStack {
@@ -117,7 +143,7 @@ struct BottomDrawerBus: View {
                 VStack {
                     Text("Conductor")
                         .font(.caption2)
-                    Text("Jose Luis Mendez")
+                    Text(network.parada?.camionProximo.conductores[0].usuarios.nombre ?? "")
                         .font(.body)
                         .fontWeight(.semibold)
                 }
@@ -125,7 +151,7 @@ struct BottomDrawerBus: View {
                 VStack {
                     Text("Placas")
                         .font(.caption2)
-                    Text("A00-AAA")
+                    Text(network.parada?.camionProximo.placas ?? "")
                         .font(.body)
                         .fontWeight(.semibold)
                 }
@@ -133,7 +159,7 @@ struct BottomDrawerBus: View {
                 VStack {
                     Text("Asientos disponibles")
                         .font(.caption2)
-                    Text("30")
+                    Text(String(network.disponibles))
                         .font(.body)
                         .fontWeight(.semibold)
                 }
@@ -144,11 +170,14 @@ struct BottomDrawerBus: View {
 }
 
 struct BottomDrawerTrip: View {
+    @Binding var counter: Int
+    var onClick: () -> Void
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
                 Spacer()
-                Text("Estás en un viaje desde hace 30 min").font(.title3)
+                Text("Llevas \(counter) segundos en el viaje").font(.title3)
                 Spacer()
             }
             Spacer()
@@ -157,11 +186,11 @@ struct BottomDrawerTrip: View {
                     .resizable()
                     .frame(width: 10, height: 10)
                     .foregroundColor(.blue)
-                Text("Subiste en la parada Donatello 43")
+                Text("Subiste en la parada Donatello")
                     .font(.body)
             }.foregroundColor(.white)
             Spacer()
-            RedButton("Finalizar viaje") { }
+            RedButton("Finalizar viaje") { onClick() }
             Spacer()
         }
     }

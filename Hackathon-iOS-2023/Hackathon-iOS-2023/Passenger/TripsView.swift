@@ -17,29 +17,34 @@ struct IdentifiableTrip: Identifiable {
 struct TripsView: View {
     let arrayTrips = [
         IdentifiableTrip(
-            date: "Abr 31",
+            date: "Abr 25",
             duration: 40,
-            driver: "José Jury Hernandez"
+            driver: "José Luis Mendez"
+        ),
+        IdentifiableTrip(
+            date: "Abr 30",
+            duration: 40,
+            driver: "Carlos Hernandez"
         ),
         IdentifiableTrip(
             date: "Abr 31",
             duration: 40,
-            driver: "José Jury Hernandez"
+            driver: "Mauricio Anaya"
         ),
         IdentifiableTrip(
-            date: "Abr 31",
+            date: "May 25",
             duration: 40,
-            driver: "José Jury Hernandez"
+            driver: "José Luis Mendez"
         ),
         IdentifiableTrip(
-            date: "Abr 31",
+            date: "May 30",
             duration: 40,
-            driver: "José Jury Hernandez"
+            driver: "Carlos Hernández"
         ),
         IdentifiableTrip(
-            date: "Abr 31",
+            date: "May 31",
             duration: 40,
-            driver: "José Jury Hernandez"
+            driver: "Mauricio Anaya"
         ),
     ]
     
