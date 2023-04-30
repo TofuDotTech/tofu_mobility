@@ -37,6 +37,7 @@ struct Passenger: View {
                 .tabItem {
                     Label("Rutas", systemImage: "bus.fill")
                 }
+            // Esto es una prueba
         }
         .navigationBarBackButtonHidden(true)
     }
