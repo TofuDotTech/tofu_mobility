@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 
-let speechSynthesizer = AVSpeechSynthesizer()
+//let speechSynthesizer = AVSpeechSynthesizer()
 
 struct TextToSpeechTestView: View {
     

@@ -24,6 +24,9 @@
 		2C8A82FB29FE59CD00C33815 /* PrincipalConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82FA29FE59CD00C33815 /* PrincipalConductor.swift */; };
 		2C8A82FD29FE59F500C33815 /* ProximaParada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82FC29FE59F500C33815 /* ProximaParada.swift */; };
 		2C8A82FF29FEB6D400C33815 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82FE29FEB6D400C33815 /* LoginView.swift */; };
+		8E4304B929FED7D2002A3A28 /* Notificaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4304B829FED7D2002A3A28 /* Notificaciones.swift */; };
+		8E4304BE29FEFCDE002A3A28 /* WebSocketStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4304BD29FEFCDE002A3A28 /* WebSocketStream.swift */; };
+		8E4304C129FF0344002A3A28 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 8E4304C029FF0344002A3A28 /* SocketIO */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,8 @@
 		2C8A82FA29FE59CD00C33815 /* PrincipalConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalConductor.swift; sourceTree = "<group>"; };
 		2C8A82FC29FE59F500C33815 /* ProximaParada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximaParada.swift; sourceTree = "<group>"; };
 		2C8A82FE29FEB6D400C33815 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8E4304B829FED7D2002A3A28 /* Notificaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificaciones.swift; sourceTree = "<group>"; };
+		8E4304BD29FEFCDE002A3A28 /* WebSocketStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketStream.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E4304C129FF0344002A3A28 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +148,8 @@
 			children = (
 				2C8A82FA29FE59CD00C33815 /* PrincipalConductor.swift */,
 				2C8A82FC29FE59F500C33815 /* ProximaParada.swift */,
+				8E4304B829FED7D2002A3A28 /* Notificaciones.swift */,
+				8E4304BD29FEFCDE002A3A28 /* WebSocketStream.swift */,
 			);
 			path = Conductor;
 			sourceTree = "<group>";
@@ -162,6 +170,9 @@
 			dependencies = (
 			);
 			name = "Hackathon-iOS-2023";
+			packageProductDependencies = (
+				8E4304C029FF0344002A3A28 /* SocketIO */,
+			);
 			productName = "Hackathon-iOS-2023";
 			productReference = 2C416CB629FD89A2008BE2A4 /* Hackathon-iOS-2023.app */;
 			productType = "com.apple.product-type.application";
@@ -190,6 +201,9 @@
 				Base,
 			);
 			mainGroup = 2C416CAD29FD89A2008BE2A4;
+			packageReferences = (
+				8E4304BF29FF0344002A3A28 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */,
+			);
 			productRefGroup = 2C416CB729FD89A2008BE2A4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -221,6 +235,7 @@
 				2C416CCA29FDB40F008BE2A4 /* TextToSpeechTestView.swift in Sources */,
 				2C8A82FF29FEB6D400C33815 /* LoginView.swift in Sources */,
 				2C8A82F329FE3A1500C33815 /* Route.swift in Sources */,
+				8E4304BE29FEFCDE002A3A28 /* WebSocketStream.swift in Sources */,
 				2C8A82E629FDDB2800C33815 /* MainView.swift in Sources */,
 				2C8A82F829FE3DEC00C33815 /* RedButton.swift in Sources */,
 				2C8A82E429FDD43600C33815 /* RouteView.swift in Sources */,
@@ -229,6 +244,7 @@
 				2C416CBC29FD89A2008BE2A4 /* ContentView.swift in Sources */,
 				2C416CBA29FD89A2008BE2A4 /* Hackathon_iOS_2023App.swift in Sources */,
 				2C416CC829FDAD11008BE2A4 /* MapTestView.swift in Sources */,
+				8E4304B929FED7D2002A3A28 /* Notificaciones.swift in Sources */,
 				2C8A82EE29FE39CB00C33815 /* RouteAlertView.swift in Sources */,
 				2C8A82FD29FE59F500C33815 /* ProximaParada.swift in Sources */,
 			);
@@ -359,6 +375,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hackathon-iOS-2023/Preview Content\"";
+				DEVELOPMENT_TEAM = TJXG95JTQT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Necesitamos su localización para el funcionamiento de la aplicación";
@@ -388,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hackathon-iOS-2023/Preview Content\"";
+				DEVELOPMENT_TEAM = TJXG95JTQT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Necesitamos su localización para el funcionamiento de la aplicación";
@@ -431,6 +449,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E4304BF29FF0344002A3A28 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:socketio/socket.io-client-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E4304C029FF0344002A3A28 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E4304BF29FF0344002A3A28 /* XCRemoteSwiftPackageReference "socket.io-client-swift" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2C416CAE29FD89A2008BE2A4 /* Project object */;
 }
