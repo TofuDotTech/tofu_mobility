@@ -44,7 +44,6 @@ struct PrincipalConductor: View {
                     .frame(maxWidth:.infinity,alignment:.leading)
                     .padding(.leading)
             }
-            .background(Color("CoolGray"))
             .padding()
             
             ZStack(alignment:.bottom){
@@ -54,7 +53,8 @@ struct PrincipalConductor: View {
             }
         }
         .edgesIgnoringSafeArea(.bottom)
-        
+        .background(Color("CoolGray"))
+        .navigationBarBackButtonHidden(true)
     }
 }
 

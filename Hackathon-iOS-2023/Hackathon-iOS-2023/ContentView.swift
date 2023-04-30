@@ -9,21 +9,25 @@ import SwiftUI
 import MapKit
 
 struct ContentView: View {
-    let manager = CLLocationManager()
-    
     init() {
         UITabBar.appearance().backgroundColor = UIColor(named: "CoolGray")
     }
     
     var body: some View {
+        LoginView()
+        /* MapTestView(
+         latitude: manager.location?.coordinate.latitude.magnitude ?? 0.0,
+         longitude: manager.location?.coordinate.longitude.magnitude ?? 0.0
+         )
+         .tabItem {
+         Label("Mapa", systemImage: "map.fill")
+         } */
+    }
+}
+
+struct Passenger: View {
+    var body: some View {
         TabView {
-            /* MapTestView(
-                latitude: manager.location?.coordinate.latitude.magnitude ?? 0.0,
-                longitude: manager.location?.coordinate.longitude.magnitude ?? 0.0
-                )
-                .tabItem {
-                    Label("Mapa", systemImage: "map.fill")
-                } */
             PassengerMainView()
                 .tabItem {
                     Label("Mapa", systemImage: "map.fill")
@@ -34,6 +38,7 @@ struct ContentView: View {
                     Label("Rutas", systemImage: "bus.fill")
                 }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
