@@ -21,6 +21,8 @@
 		2C8A82F329FE3A1500C33815 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82F229FE3A1500C33815 /* Route.swift */; };
 		2C8A82F529FE3C2000C33815 /* ManagerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82F429FE3C2000C33815 /* ManagerMainView.swift */; };
 		2C8A82F829FE3DEC00C33815 /* RedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82F729FE3DEC00C33815 /* RedButton.swift */; };
+		2C8A82FB29FE59CD00C33815 /* PrincipalConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82FA29FE59CD00C33815 /* PrincipalConductor.swift */; };
+		2C8A82FD29FE59F500C33815 /* ProximaParada.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8A82FC29FE59F500C33815 /* ProximaParada.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		2C8A82F229FE3A1500C33815 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		2C8A82F429FE3C2000C33815 /* ManagerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerMainView.swift; sourceTree = "<group>"; };
 		2C8A82F729FE3DEC00C33815 /* RedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedButton.swift; sourceTree = "<group>"; };
+		2C8A82FA29FE59CD00C33815 /* PrincipalConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalConductor.swift; sourceTree = "<group>"; };
+		2C8A82FC29FE59F500C33815 /* ProximaParada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProximaParada.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		2C416CB829FD89A2008BE2A4 /* Hackathon-iOS-2023 */ = {
 			isa = PBXGroup;
 			children = (
+				2C8A82F929FE59B000C33815 /* Conductor */,
 				2C8A82F629FE3DDC00C33815 /* Components */,
 				2C8A82EF29FE39E000C33815 /* Model */,
 				2C8A82EC29FE396400C33815 /* Manager */,
@@ -127,6 +132,15 @@
 				2C8A82F729FE3DEC00C33815 /* RedButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		2C8A82F929FE59B000C33815 /* Conductor */ = {
+			isa = PBXGroup;
+			children = (
+				2C8A82FA29FE59CD00C33815 /* PrincipalConductor.swift */,
+				2C8A82FC29FE59F500C33815 /* ProximaParada.swift */,
+			);
+			path = Conductor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,11 +220,13 @@
 				2C8A82E629FDDB2800C33815 /* MainView.swift in Sources */,
 				2C8A82F829FE3DEC00C33815 /* RedButton.swift in Sources */,
 				2C8A82E429FDD43600C33815 /* RouteView.swift in Sources */,
+				2C8A82FB29FE59CD00C33815 /* PrincipalConductor.swift in Sources */,
 				2C8A82F529FE3C2000C33815 /* ManagerMainView.swift in Sources */,
 				2C416CBC29FD89A2008BE2A4 /* ContentView.swift in Sources */,
 				2C416CBA29FD89A2008BE2A4 /* Hackathon_iOS_2023App.swift in Sources */,
 				2C416CC829FDAD11008BE2A4 /* MapTestView.swift in Sources */,
 				2C8A82EE29FE39CB00C33815 /* RouteAlertView.swift in Sources */,
+				2C8A82FD29FE59F500C33815 /* ProximaParada.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

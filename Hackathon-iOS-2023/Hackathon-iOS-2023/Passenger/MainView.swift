@@ -46,7 +46,6 @@ struct PassengerMainView: View {
                         }
                         Spacer()
                     }
-                    // .padding(.top, 50)
                     .padding(EdgeInsets(top:50, leading: 8, bottom: 0, trailing: 8))
                 }
                 .padding(.bottom)
