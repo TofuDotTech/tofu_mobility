@@ -6,3 +6,19 @@ TOFU_MOBILITY is a mobile application for iPhone designed to manage the flow of 
 - Backend: Built with NodeJS and ExpressJS. Written in TypeScript
 - Application: Developed using SwiftUI
 - Real-Time Communication: Socket.io is used to facilitate real-time communication between drivers, passengers, and fleet managers, ensuring timely updates and notifications.
+
+---
+
+- Real-time monitoring
+  
+![image](https://github.com/user-attachments/assets/85f35a7d-7527-415c-b36d-84490bf7382f)
+
+- Check for the nearest transport
+  
+![image](https://github.com/user-attachments/assets/a1ba51b8-ca15-4620-bafb-841452264b5c)
+
+- Check last rides
+  
+![image](https://github.com/user-attachments/assets/d0ddb4c1-cb4a-434d-b434-b6df848ff0a7)
+
+
